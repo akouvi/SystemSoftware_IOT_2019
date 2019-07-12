@@ -1,4 +1,4 @@
-#include "Arduino.h"
+#include "Arduino.h" //Die Servobibliothek wird aufgerufen. Sie wird benötigt, damit die Ansteuerung des Servos vereinfacht wird.
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 #include <Servo.h>
@@ -45,10 +45,14 @@ void reconnect() {
   }
 }
 
+/*
+*Das Setup enthält die Information, dass das Servo an der Steuerleitung mit Pin 2 verbunden wird. 
+*Hier ist natürlich auch ein anderer Pin möglich.
+*/
 void setup() {
   servoObject.attach(2);
   servoObject.write(0);
-  delay(2000);
+  delay(2000); // Das Programm stopt für 2 Sekunden
 
   Serial.begin(9600);
   Serial.println("Hallo Welt");
@@ -77,6 +81,10 @@ void setup() {
 }
 
 //This function will keep try to connect to the Arduino
+/*Im „loop“ wird über den write-Befehl „servoblau.write(Grad)“ das Servo angesteuert. 
+Zwischen den einzelnen Positionen gibt es eine Pause, damit das Servo genug Zeit hat, 
+die gewünschten Positionen zu erreichen.
+*/
 void loop() {
   if (!client.connected())
    reconnect();

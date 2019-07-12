@@ -68,9 +68,10 @@ void setup() {
     delay(500);
     Serial.print(".");
   }
-  //Print the IP of the aruino
+  //Print the IP of the arduino
   Serial.println(WiFi.localIP());
   //Set the server and the callBack function
+  // This IP-Address is IP of the Raspbery
   client.setServer("192.168.206.19", 1883);
   client.setCallback(callback);
 }

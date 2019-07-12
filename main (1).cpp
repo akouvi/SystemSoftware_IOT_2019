@@ -62,8 +62,8 @@ void setup() {
   WiFi.hostname("dpsasdf");
   /*
   Connecting to WIFI 
-  username : hsb-labor
-  password : 6MVfNSqdMr5SZo6d
+  *username : hsb-labor
+  *password : 6MVfNSqdMr5SZo6d
   */
   WiFi.begin("hsb-labor", "6MVfNSqdMr5SZo6d");
 
@@ -82,8 +82,8 @@ void setup() {
 
 //This function will keep try to connect to the Arduino
 /*Im „loop“ wird über den write-Befehl „servoblau.write(Grad)“ das Servo angesteuert. 
-Zwischen den einzelnen Positionen gibt es eine Pause, damit das Servo genug Zeit hat, 
-die gewünschten Positionen zu erreichen.
+*Zwischen den einzelnen Positionen gibt es eine Pause, damit das Servo genug Zeit hat, 
+*die gewünschten Positionen zu erreichen.
 */
 void loop() {
   if (!client.connected())
